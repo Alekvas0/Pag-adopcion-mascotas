@@ -20,14 +20,14 @@
                                     <h3 class="login-heading mb-4">Login de usuario</h3>
 
                                     <!-- Sign In Form -->
-                                    <form>
+                                    <form action="../../Controlador/logear.php" method="post">
                                         <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="usuario" placeholder="Usuario">
-                                        <label for="floatingInput">Usuario</label>
+                                        <input type="email" class="form-control" id="correo" name="correo" placeholder="Correo">
+                                        <label for="correo">Correo electrónico</label>
                                         </div>
                                         <div class="form-floating mb-3">
-                                        <input type="password" class="form-control" id="password" placeholder="Password">
-                                        <label for="floatingPassword">Password</label>
+                                        <input type="password" class="form-control" id="contraseña" name="contraseña" placeholder="Contraseña">
+                                        <label for="contraseña">Password</label>
                                         </div>
 
                                         <div class="d-grid">

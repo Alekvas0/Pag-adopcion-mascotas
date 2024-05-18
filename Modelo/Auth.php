@@ -15,9 +15,33 @@
                                             VALUES ('$correo','$contraseña', LAST_INSERT_ID())";
                 
                 $ejecutado2 = mysqli_query($conexion, $sql_perfil);
+
+                header("location:../Vistas/Login/V_Login.php");
             }
 
-            header("location:../Vistas/Login/V_Login.php");
+            
+        }
+
+        public function logear($correo, $contraseña) {
+            $conexion = parent::conectar();
+
+            $contraseña_existente = "";
+            $sql = "SELECT * FROM perfil
+                    WHERE Correo = '$correo'";
+            $respuesta = mysqli_query($conexion,$sql);
+
+            $contraseña_existente = mysqli_fetch_array( $respuesta)['Contraseña'];
+
+            if (password_verify($contraseña, $contraseña_existente)) {
+                $_SESSION['Correo'] = $correo;
+
+                header("location:../Vistas/Login/V_inicio.php");
+
+                return true;
+            } else {
+                return false;
+            }
+
         }
     }
 ?>
