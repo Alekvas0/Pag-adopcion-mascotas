@@ -45,6 +45,18 @@ header nav {
     color: black;
 }
 
+.link-header:hover {
+    background-color: #d18733;
+}
+
+#sesion {
+    background-color: #46a049;
+}
+
+#sesion:hover {
+    background-color: #11ad17;
+}
+
 /* --- */
 
 /* Footer */
@@ -306,11 +318,26 @@ main h1 {
 /* Slider */
 
 .slider {
-    background-color: #dda15e; /* temporal */
-    width: 100%;
-    height: 480px;
+    overflow: hidden;
 }
 
+.slider--inner {
+    /* height: 400px; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    transition: all 0.3s ease-in;
+
+}
+
+.contenedor-img img {
+    width: 1349px;
+    height: 480px;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+/* --- */
 /* contenedor inicio */
 .contenedor-inicio {
     display: flex;
@@ -334,6 +361,8 @@ main h1 {
 
 .mascotas-disponibles {
     background-color: #606c38;
+    color: black;
+    text-decoration: none;
     margin: 0;
     width: 90%;
     height: 80%;
@@ -377,6 +406,9 @@ main h1 {
 
 .contenedor-inicio aside {
     background-color: #fefae0;
+    background-image: url("img/AD.jpg");
+    background-size: cover;
+    background-position: center;
     width: 15%;
     height: 100%;
 }
