@@ -1,6 +1,9 @@
 body {
     margin: 0 0 auto 0;
     background-color: #fefae0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /*Header*/
@@ -14,12 +17,24 @@ header {
 
 }
 
+.contenedor-img-usuario {
+    display: flex;
+    width: 30%;
+    justify-content: flex-start;
+    align-items: center;
+}
+
 .contenedor-logo {
     background-color: #bc6c25;
     border-radius: 50%;
-    width: 50px; 
-    height: 50px;
-    margin: 20px 0 0 20px;
+    width: 80px; 
+    height: 80px;
+    margin: 10px 0 5px 20px;
+}
+
+.contenedor-img-usuario h2 {
+    margin-left: 15px;
+    
 }
 
 header nav {
@@ -65,7 +80,8 @@ footer {
     background-color: #606c38;
     width: 100%;
     height: auto;
-    border-top: solid 1px;
+    border-top: solid 1px;  
+    flex-shrink: 0;
     
 }
 
@@ -83,18 +99,19 @@ footer section p {
 /* --- */
 
 /* Página Adoptar mascota */
-/* Contenedor animales */
+/* Contenedor mascotas */
 
 main {
-    height: 1200px;
+    flex: 1;
+    height: 100vh;
     /* background-color: #bc6c25;  */ 
-    background-image: url("patron\ perro\ gato.avif");
+    background-image: url("../img/patron-perro-gato.avif");
 }
 
 .contenedor-mascotas {
-    
     width: 100%;
     height: 50%;
+    margin-bottom: 20px;
     display: flex;
     justify-content: center;
     gap: 10%;
@@ -105,6 +122,7 @@ main {
     background-color: #283618;
     width: 540px;
     height: 480px;
+    margin-top: 20px;
     border-radius: 50%;
     border: solid 2px;
     position: relative;
@@ -116,7 +134,7 @@ main {
 .contenedor-mascotas article {
     background-color: #dda15e;
     width: 50%;
-    height: 90%;
+    height: 100%;
     border-bottom-left-radius: 20px;
     border-top-left-radius: 20px;
     border: solid 2px;
@@ -143,13 +161,12 @@ main {
 }
 
 .especificaciones {
-    background-color: #606c38;
-    border-radius: 10px;
-    width: 50%;
+    
+    width: 60%;
     margin: 0 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     text-align: center;
 }
 
@@ -160,12 +177,16 @@ main {
 .especificaciones span {    
     font-size: x-large;
     background-color: #fefae0;
+    width: 100%;
+    border-radius: 20px;
+    border: solid 1px;
     /* border-radius: 10px; */
     /* padding: 5px 0; */
 }
 
 .descripcion-mascota {
     background-color: #fefae0;
+    margin-bottom: 20px;
     border-radius: 10px;
     width: 90%;
     height: 38%;
@@ -186,6 +207,7 @@ main h1 {
 
 .contenedor-formulario {
     padding-top: 20px;
+    margin-bottom: 20px;
     width: 100%;
     height: 40%;    
     display: flex;
@@ -257,7 +279,9 @@ main h1 {
 /* Página ¿como adoptar? */
 
 #main-adoptar {
-    height: 750px;
+    height: 100vh;
+    margin-bottom: 10px;
+    flex: 1;
     background-color: #bc6c25;  
 }
 
@@ -280,6 +304,7 @@ main h1 {
 
 .pregunta-correo {
     padding-top: 15px;
+    margin-bottom: 15px;
     width: 100%;
     height: 46%;    
     display: flex;
@@ -343,32 +368,55 @@ main h1 {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    height: 720px;
+    height: 100vh;
 }
 
 .contenedor-animales {
-    background-color: #bc6c25;
-    background-image: url("patron\ perro\ gato.avif");
+    /* background-color: #bc6c25;
+    background-image: url("../img/patron-perro-gato.avif"); */
     margin: 0;
-    width: 90%;
+    width: 85%;
     height: 100%;
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 50% 50%;
+    grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
     align-items: center;
     justify-items: center;
+
+    flex-wrap: wrap;
+    align-items: stretch;
+
 }
 
 .mascotas-disponibles {
     background-color: #606c38;
     color: black;
     text-decoration: none;
-    margin: 0;
-    width: 90%;
-    height: 80%;
+    width: 95%;
+    height: 85%;
     display: flex;  
+    /* flex-direction: column; */
+    align-items: center;
     border-radius: 20px;
-    
+    transition: 0.3s;
+
+
+    /* background-color: #606c38;
+    color: black;
+    text-decoration: none;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    transition: 0.3s;
+    box-sizing: border-box;
+    padding: 10px; */
+}
+
+.mascotas-disponibles:hover {
+    box-shadow: 2px 10px 6px rgba(0, 0, 0, 0.4);
 }
 
 .mascotas-disponibles img {
@@ -388,9 +436,9 @@ main h1 {
     height: auto;
     display: flex;
     flex-direction: column;
-    position: relative;
+    /* position: relative; */
     justify-content: center;
-    left: 5%;
+    /* left: 5%; */
 }
 
 .desc-mascota h2 {
@@ -406,11 +454,12 @@ main h1 {
 
 .contenedor-inicio aside {
     background-color: #fefae0;
-    background-image: url("img/AD.jpg");
+    background-image: url("../img/AD.jpg");
     background-size: cover;
     background-position: center;
     width: 15%;
-    height: 100%;
+    min-height: 100vh;
+    height: auto;
 }
 
 /* --- */

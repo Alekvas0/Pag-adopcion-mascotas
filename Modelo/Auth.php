@@ -18,8 +18,6 @@
 
                 header("location:../Vistas/Login/V_Login.php");
             }
-
-            
         }
 
         public function logear($correo, $contraseña) {
@@ -33,9 +31,10 @@
             $contraseña_existente = mysqli_fetch_array( $respuesta)['Contraseña'];
 
             if (password_verify($contraseña, $contraseña_existente)) {
-                $_SESSION['Correo'] = $correo;
+                session_start();
+                $_SESSION['correo'] = $correo;
 
-                header("location:../Vistas/Login/V_inicio.php");
+                header("location:../Vistas/Paginas/V_inicio.php");
 
                 return true;
             } else {
@@ -43,5 +42,9 @@
             }
 
         }
+
+        /* public function datosMascotas() {
+
+        } */
     }
 ?>
