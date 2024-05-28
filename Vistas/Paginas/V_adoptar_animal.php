@@ -99,7 +99,9 @@ if ($resultado) {
             </article>
         </div>
 
-        <H1>Formulario de adopción</H1>
+        <div class="titulo">
+            <H1>Formulario de adopción</H1>
+        </div>
         <div class="contenedor-formulario">
             <form action="https://formsubmit.co/adoptamascotas.m@gmail.com" method="post" > <!-- 08bb7d8bfe89d0613bfe5e1cacf43163 (email encriptado /adoptamascotas.m@gmail.com) -->
 

@@ -35,23 +35,27 @@ session_start();
         </nav>
     </header>
 
-    <main id="main-adoptar">
-        <h1>¿Como puedo adoptar?</h1>
+    <main>
+        <div class="titulo">
+            <h1>¿Como puedo adoptar?</h1>
+        </div>
         <div class="contenedor-instruccion">
             <div class="instrucciones">
-                1
+                <img src="img/Instrucciones/paso1.png" alt="paso_1">
             </div>
 
             <div class="instrucciones">
-                2
+                <img src="img/Instrucciones/paso2.png" alt="paso_2">
             </div>
 
             <div class="instrucciones">
-                3
+                <img src="img/Instrucciones/paso3.png" alt="paso_3">
             </div>
         </div>
 
-        <h1>¿Alguna otra pregunta?, escríbenos un correo</h1>
+        <div class="titulo">
+            <h1>¿Alguna otra pregunta?, escríbenos un correo</h1>
+        </div>
         <div class="pregunta-correo">
             <form action="https://formsubmit.co/adoptamascotas.m@gmail.com" method="post" >
 

@@ -34,7 +34,7 @@
                 session_start();
                 $_SESSION['correo'] = $correo;
 
-                header("location:../Vistas/Paginas/V_inicio.php");
+                header("location:http://localhost/mascotas/Vistas/paginas/V_inicio.php");
 
                 return true;
             } else {

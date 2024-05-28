@@ -78,7 +78,7 @@ $resultado = mysqli_query($con,$sql);
                     
                     <img src="<?php echo $imagen; ?>">
                     <div class="desc-mascota">
-                        <h2><?php echo $row['Nombre']; ?></h2>
+                        <h1><?php echo $row['Nombre']; ?></h1>
                         <h2><?php echo $row['Raza']; ?></h2>
                         <h2><?php echo $row['Edad']; ?></h2>
                         <h2><?php echo $row['Sexo']; ?></h2>
@@ -92,20 +92,6 @@ $resultado = mysqli_query($con,$sql);
                         <h2>Juanito</h2>
                         <p>
                             Juanito es un gato siamés de 2 años con un carácter curioso y afectuoso. Sus ojos azules y su elegante pelaje lo hacen destacar en cualquier lugar. Juanito es juguetón y le encanta explorar su entorno, pero también aprecia los mimos y caricias. Es perfecto para familias o personas que buscan un compañero fiel y entretenido. Juanito está castrado y al día con sus vacunas. Adóptalo y descubre la maravilla de tener un amigo felino leal y encantador.</p>
-                    </div>
-                </a> -->
-                <!-- <a class="mascotas-disponibles" href="">
-                    <img src="img/Perfil/Molly.jpg" alt="">
-                    <div class="desc-mascota">
-                        <h2>Molly</h2>
-                        <p>Molly es una dulce labradora de 3 años, con un espíritu juguetón y un corazón lleno de amor. Su pelaje dorado y ojos expresivos la convierten en una belleza irresistible. Es muy sociable, se lleva bien con niños y otros perros, y adora los paseos al aire libre. Molly está entrenada y siempre dispuesta a aprender nuevas cosas. Busca una familia activa y amorosa que le brinde el hogar que merece. ¡Adopta a Molly y añade una dosis extra de alegría a tu vida!</p>
-                    </div>
-                </a>
-                <a class="mascotas-disponibles" href="">
-                    <img src="img/Perfil/Nala.jpg" alt="">
-                    <div class="desc-mascota"s>
-                        <h2>Nala</h2>
-                        <p>Nala es una hermosa gata atigrada de 1 año, llena de energía y ternura. Su pelaje suave y sus ojos brillantes la convierten en una compañera irresistible. Es juguetona, curiosa y disfruta tanto de la compañía humana como de sus ratos de independencia. Nala se adapta fácilmente a nuevos entornos y es ideal para cualquier hogar que le ofrezca amor y cuidado. Está esterilizada y vacunada. ¡Adopta a Nala y añade un toque de dulzura y diversión a tu vida!</p>
                     </div>
                 </a> -->
             </div>
