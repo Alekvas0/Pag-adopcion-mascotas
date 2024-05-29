@@ -64,10 +64,10 @@ session_start();
 
                 <input type="hidden" id="correo_usuario" name="correo_usuario"
                 value = "<?php 
-                            if (!isset($_SESSION["correo"])){
+                            if (!isset($_SESSION['credenciales'])){
                                 echo "correo@anonimo.com";
                             }else {
-                                echo $_SESSION['correo'];
+                                echo $_SESSION['credenciales']['1'];
                             } ?>
                 "/>
 

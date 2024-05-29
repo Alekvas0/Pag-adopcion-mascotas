@@ -111,10 +111,10 @@ if ($resultado) {
                 <input type="hidden" name="_subject" value="Petición de adopción">
                 <input type="hidden" id="correo_usuario" name="correo_usuario"
                 value = "<?php 
-                            if (!isset($_SESSION["correo"])){
+                            if (!isset($_SESSION['credenciales'])){
                                 echo "correo@anonimo.com";
                             }else {
-                                echo $_SESSION['correo'];
+                                echo $_SESSION['credenciales']['1'];
                             } ?>
                 "/>
                 <input type="hidden" id="id_mascota" name="id_mascota" value = "<?php echo $id; ?>" />

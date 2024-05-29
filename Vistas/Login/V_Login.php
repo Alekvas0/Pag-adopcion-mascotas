@@ -1,6 +1,9 @@
 <?php 
 session_start();
-session_destroy();
+unset($_SESSION["credenciales"]);
+
+
+/* var_dump ($_SESSION['credenciales']['0']); */
 ?>
 
 <!DOCTYPE html>

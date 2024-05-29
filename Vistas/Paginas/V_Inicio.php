@@ -7,8 +7,8 @@ $con = $db->conectar();
 
 $sql = "SELECT * FROM mascota";
 $resultado = mysqli_query($con,$sql);
-
-/* var_dump ($_SESSION['correo']); */
+/* 
+var_dump ($_SESSION['credenciales']['0']); */
 ?>
 
 
@@ -26,14 +26,27 @@ $resultado = mysqli_query($con,$sql);
         <div class="contenedor-img-usuario">
             <img class="contenedor-logo" src="img/Mino.jpg" alt="" />
             <h2><?php
-            if (!isset($_SESSION["correo"])){
+            if (!isset($_SESSION["credenciales"])){
                 echo " ";
             }else {
-                echo $_SESSION['correo'];
+                echo $_SESSION['credenciales']['1'];
             }
             ?></h2>
         </div>
         
+        <div class="admin">
+            <?php
+            if (!isset($_SESSION["credenciales"])){
+                echo " ";
+            }else {
+                if ($_SESSION['credenciales']['0'] == 1){
+                    echo '<a href="../Admin/crud.php">admin</a>';
+                }else {
+                    echo ' ';
+                }
+            }
+            ?>
+        </div>
 
         <nav>
             <a class="link-header" href="V_inicio.php">Inicio</a>
