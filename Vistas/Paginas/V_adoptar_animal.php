@@ -42,17 +42,33 @@ if ($resultado) {
     <link rel="stylesheet" href="Estilos_pag/Estilo.css">
 </head>
 <body>
-    <header>
+<header>
         <div class="contenedor-img-usuario">
             <img class="contenedor-logo" src="img/Mino.jpg" alt="" />
             <h2><?php
-            if (!isset($_SESSION["correo"])){
+            if (!isset($_SESSION["credenciales"])){
                 echo " ";
             }else {
-                echo $_SESSION['correo'];
+                echo $_SESSION['credenciales']['1'];
             }
             ?></h2>
         </div>
+        
+        
+            <?php
+            if (!isset($_SESSION["credenciales"])){
+                echo " ";
+            }else {
+                if ($_SESSION['credenciales']['0'] == 1){
+                    echo '<div class="admin">
+                    <a href="../Admin/crud.php">admin</a>
+                    </div>';
+                }else {
+                    echo ' ';
+                }
+            }
+            ?>
+        
 
         <nav>
             <a class="link-header" href="V_inicio.php">Inicio</a>

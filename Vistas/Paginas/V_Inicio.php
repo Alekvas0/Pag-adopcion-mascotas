@@ -34,19 +34,21 @@ var_dump ($_SESSION['credenciales']['0']); */
             ?></h2>
         </div>
         
-        <div class="admin">
+        
             <?php
             if (!isset($_SESSION["credenciales"])){
                 echo " ";
             }else {
                 if ($_SESSION['credenciales']['0'] == 1){
-                    echo '<a href="../Admin/crud.php">admin</a>';
+                    echo '<div class="admin">
+                    <a href="../Admin/crud.php">admin</a>
+                    </div>';
                 }else {
                     echo ' ';
                 }
             }
             ?>
-        </div>
+        
 
         <nav>
             <a class="link-header" href="V_inicio.php">Inicio</a>
