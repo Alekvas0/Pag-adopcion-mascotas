@@ -22,6 +22,10 @@ if ($resultado) {
         $descripcion = $row['Descripcion'];
 
         $imagen = "img/Perfil/$id/perfil.jpg";
+
+        if(!file_exists($imagen)) {
+            $imagen = "img/perfil/error.jpg";
+        }
     }
 } else {
     echo "Error al ejecutar la consulta: " . mysqli_error($con);

@@ -408,14 +408,14 @@ main {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    min-height: 300px;
+    min-height: 1000px;
 }
 
 .contenedor-animales {
     margin: 0;
     padding-top: 20px;
     width: 85%;
-    min-height: 300px;
+    min-height: 800px;
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
