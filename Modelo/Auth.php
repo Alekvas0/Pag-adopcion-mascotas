@@ -11,7 +11,7 @@
             $ejecutado = mysqli_query($conexion, $sql_usuario);
 
             if($ejecutado) {
-                $sql_perfil = "INSERT INTO perfil (correo, contraseña, ID_usuario, Rol)
+                $sql_perfil = "INSERT INTO perfil (correo, contraseña, ID_usuario, Rol) /* Cambiar 2 por 1 para crear perfil de 'Administrador' */
                                             VALUES ('$correo','$contraseña', LAST_INSERT_ID(), '2')";
                 
                 $ejecutado2 = mysqli_query($conexion, $sql_perfil);
