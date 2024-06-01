@@ -8,9 +8,6 @@ $con = $db->conectar();
 $id = isset($_GET['id']) ? $_GET['id'] : '';
 $token = isset( $_GET["token"] ) ? $_GET["token"] :" ";
 
-/* var_dump ($_SESSION['correo']); */
-
-
 $sql = "SELECT * FROM mascota WHERE ID_Mascota = '$id'";
 $resultado = mysqli_query($con, $sql);
 
@@ -29,17 +26,15 @@ if ($resultado) {
 } else {
     echo "Error al ejecutar la consulta: " . mysqli_error($con);
 }
-
 ?>
-
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="GMT-4">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adopción</title>
     <link rel="stylesheet" href="Estilos_pag/Estilo.css">
+    <script src="JavaScript/atencion.js"></script>
 </head>
 <body>
 <header>
@@ -53,41 +48,31 @@ if ($resultado) {
             }
             ?></h2>
         </div>
-        
-        
-            <?php
+        <?php
             if (!isset($_SESSION["credenciales"])){
-                echo " ";
+                    echo " ";
             }else {
                 if ($_SESSION['credenciales']['0'] == 1){
-                    echo '<div class="admin">
-                    <a href="../Admin/crud.php">admin</a>
-                    </div>';
+                    echo '<a class="link-header sesion" href="../Admin/V_crud.php">admin</a>';
                 }else {
-                    echo ' ';
+                        echo ' ';
                 }
             }
             ?>
-        
-
         <nav>
             <a class="link-header" href="V_inicio.php">Inicio</a>
             <a class="link-header" href="V_como_adoptar.php">Como adoptar</a>
             <a id="sesion" class="link-header" href="../Login/V_Login.php">Iniciar Sesión</a>
-
-            <!-- <div>Menu</div> -->
         </nav>
     </header>
 
     <main>
         <div class="contenedor-mascotas">
-            <!-- <div class="imagen-mascota">
-                
-            </div> -->
+            <div class="modal-container">
+                <img class="imagen-mascota" src="<?php echo $imagen; ?>" alt="Perfil">
+            </div>
 
-            <img class="imagen-mascota" src="<?php echo $imagen; ?>" alt="Perfil">
-
-            <article> <!-- class="descripcion-animal" -->
+            <article> 
                 <h1><?php echo $nombre ?></h1>
                 <div class="contenedor-especificaciones">
                     <div class="especificaciones">
@@ -136,8 +121,6 @@ if ($resultado) {
                 <input type="hidden" id="id_mascota" name="id_mascota" value = "<?php echo $id; ?>" />
                 <input type="hidden" id="nombre_mascota" name="nombre_mascota" value = "<?php echo $nombre; ?>" />
                 
-                
-
                 <div class="pregunta-form">
                     <label for="rut">RUT</label>
                     <br>
@@ -169,23 +152,34 @@ if ($resultado) {
                     <input type="number" min="1" id="integrantes" name="integrantes" required />
                 </div>
 
-                <div class="pregunta-form enviar adop-animal">
-                    <button type="submit" onclick="window.alert('Su petición se está enviando, por favor espere hasta que se redireccione al inicio. Gracias.');">Envíar</button>
-                </div>
+                <?php
+                if (!isset($_SESSION["credenciales"])){
+                    echo '<div class="pregunta-form enviar adop-animal"><p class="no-form">debe registrarse para poder envíar el formulario</p></div> ';
+                }else {
+                    echo '<div class="pregunta-form enviar adop-animal">
+                    <button type="submit" onclick="window.alert("Su petición se está enviando, por favor espere hasta que se redireccione al inicio. Gracias.");">Envíar</button></div>';
+                }
+                ?>
+                
             </form>
         </div>
     </main>
 
-    <footer>
+    <footer class="center">
+        <script src="JavaScript/toTop.js"></script>
         <section>
             <p><b>Información de contacto</b></p>
             <p><b>Institución</b></p>
         </section>
+
+        <a class=" link-header" onclick="toTop()">Top</a>
 
         <section>
             <p><b>Alek Vásquez Rojas | correo@gmail.com | tel: +56912345678</b></p>
             <p><b>AIEP</b></p>
         </section>
     </footer>
+
+    <script src="JavaScript/img_modal.js"></script>
 </body>
 </html>

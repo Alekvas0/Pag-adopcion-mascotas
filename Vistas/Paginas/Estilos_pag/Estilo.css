@@ -13,8 +13,8 @@ header {
     height: 100px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     border-bottom: solid 1px;
-
 }
 
 .contenedor-img-usuario {
@@ -98,6 +98,17 @@ footer section p {
     margin: 0 16px;
 }
 
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+footer a {
+    align-self: center;
+    color: #000000;
+}
+
 /* --- */
 
 /* Página Adoptar mascota */
@@ -105,9 +116,9 @@ footer section p {
 
 main {
     flex: 1;
-    height: 100vh;
-    /* background-color: #bc6c25;  */ 
+    min-height: 1000px;
     background-image: url("../img/patron1.jpg");
+    
 }
 
 .titulo {
@@ -122,6 +133,8 @@ main {
     border-radius: 4px;
 }
 
+/* --- */
+
 .contenedor-mascotas {
     width: 100%;
     height: 50%;
@@ -129,19 +142,47 @@ main {
     display: flex;
     justify-content: center;
     gap: 10%;
-    /* border-bottom: #283618 solid; */
 }
+
+/* --- */
+
+.modal-container.active {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    z-index: 3;
+    justify-content: center;
+}
+
+.modal-container.active::after {
+    content: '';
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.56);
+}
+
 .imagen-mascota {
     background-color: #E5E5E5;
     width: 540px;
     height: 480px;
     margin-top: 20px;
+    z-index: 4;
     border-radius: 50%;
     border: solid 2px;
     position: relative;
-    top: 10%;
-    left: 5%;
+    transition: 0.3s;
 }
+
+.imagen-mascota:hover {
+    box-shadow: 6px 12px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* --- */
+
  /* Descripcion mascota */
 
 .contenedor-mascotas article {
@@ -152,6 +193,7 @@ main {
     border-top-left-radius: 20px;
     border: solid 2px;
     position: relative;
+    z-index: 2;
     top: 20px;
     display: flex;
     flex-direction: column;
@@ -183,18 +225,12 @@ main {
     text-align: center;
 }
 
-/* .datos {
-    margin-right: 80px;
-} */
-
 .especificaciones span {    
     font-size: x-large;
     background-color: #fefae0;
     width: 100%;
     border-radius: 20px;
     border: solid 1px;
-    /* border-radius: 10px; */
-    /* padding: 5px 0; */
 }
 
 .descripcion-mascota {
@@ -206,17 +242,13 @@ main {
 }
 
 .descripcion-mascota p {
-    margin: 5px 10px;
+    margin: 5px 10px;   
     font-size: large;
 }
 
-/* Formulario adopción */
+/* --- */
 
-/* main h1 {
-    margin: 0;
-    padding-top: 10px;
-    text-align: center;
-} */
+/* Formulario adopción */
 
 .contenedor-formulario {
     padding-top: 20px;
@@ -288,20 +320,20 @@ main {
 .enviar button:hover {
     background-color: #294e9e;
 }
+
+.no-form {
+    color: #E5E5E5
+}
 /* --- */
 
 /* Página ¿como adoptar? */
 
 .contenedor-instruccion {
     padding-top: 15px;
-    display: flex; /* query: display: inline-block */
-    /* flex: 1; */
-    /* justify-content: space-between; */
-    /* flex-wrap: wrap; */
-    gap: 9px;
+    display: flex;
+    justify-content: center;
     width: 100%;
     height: 260px;
-    
 }
 
 .instrucciones {
@@ -356,7 +388,6 @@ main {
 }
 
 .slider--inner {
-    /* height: 400px; */
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -364,37 +395,34 @@ main {
 
 }
 
-.contenedor-img img {
-    width: 99vw;
-    height: 480px;
-    aspect-ratio: 16/9;
+.contenedor-img{
+    max-width: 100%;
+    height: 500px;
     object-fit: cover;
 }
 
 /* --- */
+
 /* contenedor inicio */
 .contenedor-inicio {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    height: 100vh;
+    min-height: 300px;
 }
 
 .contenedor-animales {
-    /* background-color: #bc6c25;
-    background-image: url("../img/patron-perro-gato.avif"); */
     margin: 0;
+    padding-top: 20px;
     width: 85%;
-    height: 100%;
+    min-height: 300px;
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
     align-items: center;
     justify-items: center;
-
     flex-wrap: wrap;
     align-items: stretch;
-
 }
 
 .mascotas-disponibles {
@@ -403,25 +431,10 @@ main {
     text-decoration: none;
     width: 95%;
     height: 85%;
-    display: flex;  
-    /* flex-direction: column; */
-    align-items: center;
-    border-radius: 20px;
-    transition: 0.3s;
-
-
-    /* background-color: #606c38;
-    color: black;
-    text-decoration: none;
-    width: 100%;
-    height: auto;
     display: flex;
-    flex-direction: column;
     align-items: center;
     border-radius: 20px;
     transition: 0.3s;
-    box-sizing: border-box;
-    padding: 10px; */
 }
 
 .mascotas-disponibles:hover {
@@ -432,11 +445,12 @@ main {
     background-color: #fefae0;
     margin: 0;
     width: 40%;
-    height: 80%;
+    height: 70%;
     border-radius: 50%;
     align-self: center;
     position: relative;
-    left: 5px;
+    left: 40px;
+    border: solid 3px ;
 }
 
 .desc-mascota {
@@ -445,13 +459,14 @@ main {
     height: auto;
     display: flex;
     flex-direction: column;
-    /* position: relative; */
     justify-content: center;
-    /* left: 5%; */
+    align-items: center;
 }
 
 .desc-mascota h2 {
     margin: 0 0 15px 0;
+    width: 100px;
+    height: auto;
     text-align: center;
 }
 
@@ -478,9 +493,3 @@ main {
 }
 
 /* --- */
-/* CRUD */
-
-/* #main-admin {
-    background-image: none;
-    background-color: #E5E5E5;
-} */

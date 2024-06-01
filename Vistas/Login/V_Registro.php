@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="GMT-4">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
 
@@ -45,8 +45,7 @@
                 <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Dirección" required>
                 <label for="direccion">Dirección</label>
               </div>
-              
-
+            
               <hr>
 
               <div class="form-floating mb-3">
@@ -61,9 +60,6 @@
               <a class="d-block text-center mt-2 small" href="V_Login.php">¿Ya tienes una cuenta? Entra aquí</a>
 
               <hr class="my-4">
-
-              
-
             </form>
           </div>
         </div>
@@ -71,7 +67,7 @@
     </div>
   </div>
 
-  <!-- <script>src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"</script> -->
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </body>

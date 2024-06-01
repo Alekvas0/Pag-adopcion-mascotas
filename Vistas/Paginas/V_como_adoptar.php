@@ -1,20 +1,16 @@
 <?php 
 session_start();
-
-/* var_dump ($_SESSION['correo']); */
 ?>
-
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="GMT-4">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Como adoptar</title>
     <link rel="stylesheet" href="Estilos_pag/Estilo.css">
 </head>
 <body>
-<header>
+    <header>
         <div class="contenedor-img-usuario">
             <img class="contenedor-logo" src="img/Mino.jpg" alt="" />
             <h2><?php
@@ -25,23 +21,17 @@ session_start();
             }
             ?></h2>
         </div>
-        
-        
-            <?php
+        <?php
             if (!isset($_SESSION["credenciales"])){
-                echo " ";
+                    echo " ";
             }else {
                 if ($_SESSION['credenciales']['0'] == 1){
-                    echo '<div class="admin">
-                    <a href="../Admin/crud.php">admin</a>
-                    </div>';
+                    echo '<a class="link-header sesion" href="../Admin/V_crud.php">admin</a>';
                 }else {
-                    echo ' ';
+                        echo ' ';
                 }
             }
             ?>
-        
-
         <nav>
             <a class="link-header" href="V_inicio.php">Inicio</a>
             <a class="link-header" href="V_como_adoptar.php">Como adoptar</a>
@@ -73,7 +63,7 @@ session_start();
             <h1>¿Alguna otra pregunta?, escríbenos un correo</h1>
         </div>
         <div class="pregunta-correo">
-            <form action="https://formsubmit.co/adoptamascotas.m@gmail.com" method="post" >
+            <form class="form-pregunta" action="https://formsubmit.co/adoptamascotas.m@gmail.com" method="post" >
 
                 <input type="hidden" name="_next" value="http://localhost/mascotas/Vistas/paginas/V_inicio.php">
                 <input type="hidden" name="_captcha" value="false"> <!-- True para evitar bots -->
@@ -95,18 +85,28 @@ session_start();
                     <textarea id="mensaje" name="mensaje" required></textarea>
                 </div>
 
-                <div class="pregunta-form enviar">
-                    <button type="submit" onclick="window.alert('Su mensaje se ha enviado correctamente, se le contactará vía correo electrónico');">Envíar</button>
-                </div>
+
+                <?php
+                if (!isset($_SESSION["credenciales"])){
+                    echo '<div class="pregunta-form enviar"><p class="no-form">debe registrarse para poder envíar el formulario</p></div> ';
+                }else {
+                    echo '<div class="pregunta-form enviar">
+                    <button type="submit" onclick="window.alert("Su mensaje se ha enviado correctamente, se le contactará vía correo electrónico");">Envíar</button></div>';
+                }
+                ?>
+                
             </form>
         </div>
     </main>
 
-    <footer>
+    <footer class="center">
+        <script src="JavaScript/toTop.js"></script>
         <section>
             <p><b>Información de contacto</b></p>
             <p><b>Institución</b></p>
         </section>
+
+        <a class=" link-header" onclick="toTop()">Top</a>
 
         <section>
             <p><b>Alek Vásquez Rojas | correo@gmail.com | tel: +56912345678</b></p>
